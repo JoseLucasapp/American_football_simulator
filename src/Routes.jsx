@@ -4,12 +4,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import FirstPage from './pages/FirstPage';
 import Standings from './pages/Standings';
+import WildCard from './pages/WildCard';
 
 const Stack = createStackNavigator();
 
 export default function Routes(){
     return (
-        <Stack.Navigator initialRouteName="FirstPage">
+        <Stack.Navigator initialRouteName="Standings">
             
             <Stack.Screen name="FirstPage" component={FirstPage} 
             options={{
@@ -17,6 +18,11 @@ export default function Routes(){
             }}/>
 
             <Stack.Screen name="Standings" component={Standings} 
+            options={{
+              headerShown: false
+            }}/>
+
+            <Stack.Screen name="WildCard" component={WildCard} 
             options={{
               headerShown: false
             }}/>

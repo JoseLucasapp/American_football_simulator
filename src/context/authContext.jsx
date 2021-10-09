@@ -6,28 +6,11 @@ const Context = createContext();
 
 function AuthProvider({children}){
 
-    const nfc = useState({
-        one: '',
-        two: '',
-        three: '',
-        four: '',
-        five: '',
-        six: '',
-        seven: ''
-    });
-
-    const afc = useState({
-        one: '',
-        two: '',
-        three: '',
-        four: '',
-        five: '',
-        six: '',
-        seven: ''
-    });
+    const [selectedAfc, setSelectedAfc] = useState([]);
+    const [selectedNfc, setSelectedNfc] = useState([]);
 
     return(
-        <Context.Provider value={{details, afc, nfc}}>
+        <Context.Provider value={{details, selectedNfc, selectedAfc, setSelectedAfc, setSelectedNfc}}>
             {children}
         </Context.Provider>
     )

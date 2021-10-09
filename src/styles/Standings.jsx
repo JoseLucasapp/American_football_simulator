@@ -1,10 +1,8 @@
-import React from 'react';
-
 import { StyleSheet } from 'react-native';
 
 export const StandingsStyle = StyleSheet.create({
     list:{
-        height: 100+'%'
+        height: 90+'%'
     },
     afc:{
         color: 'red',
@@ -12,21 +10,20 @@ export const StandingsStyle = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 15,
         marginBottom: 3,
+        marginLeft: 5+'%'
     },
     nfc:{
         marginTop: 15,
         marginBottom: 3,
         color: 'blue',
         fontSize: 22,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 5+'%'
     },
     topWordText:{
         fontSize: 20,
         fontWeight: 'bold',
-        textAlign: 'center'
-    },
-    teamBtn:{
-        marginTop: 5
+        textAlign: 'center',
     },
     main:{
         backgroundColor: 'grey',
