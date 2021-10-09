@@ -11,8 +11,23 @@ const WildCard = ({navigation})=>{
             <TouchableOpacity onPress={()=> navigation.navigate("Standings")}>
                 <Text>Standings</Text>
             </TouchableOpacity>
-            <Text>{selectedAfc[0]}</Text>
-            <Text>{selectedNfc[0]}</Text>
+            <Text>{selectedAfc[0][6].team}</Text>
+            <Text>{selectedAfc[0][1].team}</Text>
+
+            <Text>{selectedAfc[0][5].team}</Text>
+            <Text>{selectedAfc[0][2].team}</Text>
+
+            <Text>{selectedAfc[0][4].team}</Text>
+            <Text>{selectedAfc[0][3].team}</Text>
+            
+            <Text>{selectedNfc[0][6].team}</Text>
+            <Text>{selectedNfc[0][1].team}</Text>
+
+            <Text>{selectedNfc[0][5].team}</Text>
+            <Text>{selectedNfc[0][2].team}</Text>
+
+            <Text>{selectedNfc[0][4].team}</Text>
+            <Text>{selectedNfc[0][3].team}</Text>
         </View>
     )
 }

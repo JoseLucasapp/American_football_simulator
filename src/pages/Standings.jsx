@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef} from 'react';
 import { View, Text, SectionList } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -7,45 +7,88 @@ import {StandingsStyle} from '../styles/Standings';
 
 const Standings = ({navigation})=>{
 
-    const {details} = useContext(Context);
+    const {details, setSelectedAfc, setSelectedNfc} = useContext(Context);
+    const wildCardBtn = useRef();
     const selectedAfc = [];
     const selectedNfc = [];
     let afc = 0;
     let nfc = 0;
 
-    const deleteFromArray = (array, team)=>{
+    const deleteFromArray = (array, data)=>{
         for( let i = 0; i < array.length; i++){ 
                                    
-            if ( array[i] === team) { 
+            if ( array[i].team === data.team) { 
                 array.splice(i, 1); 
                 i--;
             }
         }
     }
 
-    const selectTeam = (data)=>{
-        if(selectedAfc.includes(data.team)){
-            afc-= 1;
-            return deleteFromArray(selectedAfc, data.team);
+    const wildCard = ()=>{
+        setSelectedNfc((old)=> [...old, selectedNfc]);
+        setSelectedAfc((old)=> [...old, selectedAfc]);
+        return navigation.navigate('WildCard');
+    }
+
+    const arrayCountainsTeam = (array, data)=>{
+        for( let i = 0; i < array.length; i++){ 
+                                   
+            if ( array[i].team === data.team) { 
+                return true;
+            }
         }
-        if(selectedNfc.includes(data.team)){
+
+        return false;
+    }
+
+    const showWildCardBtn = (status)=>{
+        if(status === 'unlock'){
+            return wildCardBtn.current.setNativeProps({
+                style:{
+                    opacity: 1,
+                    zIndex: 10
+                }
+            })
+        }
+
+        wildCardBtn.current.setNativeProps({
+            style:{
+                opacity: 0,
+                zIndex: -10
+            }
+        })
+    }
+
+    const selectTeam = (data)=>{
+        if(arrayCountainsTeam(selectedAfc, data)){
+            afc-= 1;
+            return deleteFromArray(selectedAfc, data);
+        }
+        if(arrayCountainsTeam(selectedNfc, data)){
             nfc -=1;
-            return deleteFromArray(selectedNfc, data.team);
+            return deleteFromArray(selectedNfc, data);
         }
 
         if(data.conference === 'afc'){
             if(selectedAfc.length === 7){
                 return afc = 7;
             }
-            selectedAfc.push(data.team);
+            selectedAfc.push(data);
             afc += 1;
         }else{
             if(selectedNfc.length === 7){
                 return nfc = 7;
             }
-            selectedNfc.push(data.team);
+            selectedNfc.push(data);
             nfc +=1;
         }
+
+        showWildCardBtn(false);
+
+        if(afc == 7 && nfc == 7){
+            showWildCardBtn('unlock');
+        }
+
     }
 
     return(
@@ -106,11 +149,17 @@ const Standings = ({navigation})=>{
                 renderItem={({item}) => <TouchableOpacity 
                     onPress={()=>selectTeam({conference:item.conference, team: item.key, colors: { color1: item.color1, color2: item.color2}})}
                     style={{marginTop: 5, backgroundColor: item.color2, width: 80+'%', marginLeft: 10+'%', height: 40, justifyContent: 'center'}}
-                    ><Text style={StandingsStyle.teamText, {marginLeft: 2+'%',fontSize: 20, fontWeight: 'bold', color: item.color1}}>{item.key}</Text></TouchableOpacity>}
+                    >
+                        <Text
+                        style={StandingsStyle.teamText, {marginLeft: 2+'%',fontSize: 20, fontWeight: 'bold', color: item.color1}}
+                        >{item.key}</Text></TouchableOpacity>}
                 renderSectionHeader={({section}) => <Text style={section.title[0] === 'N'? StandingsStyle.nfc: StandingsStyle.afc}>{section.title}</Text>}
                 keyExtractor={(item, index) => index}
                 />
             </View>
+            <View ref={wildCardBtn} style={StandingsStyle.finish}>
+                <TouchableOpacity onPress={()=> wildCard()} style={{width: 100+'%'}}>
+                    <Text style={{fontSize: 20, fontWeight: 'bold', textAlign:'center'}}>Wild Card</Text></TouchableOpacity></View>
         </View>
     )
 }

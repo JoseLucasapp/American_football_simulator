@@ -28,5 +28,17 @@ export const StandingsStyle = StyleSheet.create({
     main:{
         backgroundColor: 'grey',
         height: 100+'%'
+    },
+    finish:{
+        width: 50+'%',
+        height: 40,
+        backgroundColor: 'red',
+        position: 'absolute',
+        marginTop: 530,
+        borderRadius: 15,
+        justifyContent: 'center',
+        marginLeft: 25+'%',
+        opacity: 0,
+        zIndex: -10
     }
 });
