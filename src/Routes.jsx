@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 export default function Routes(){
     return (
-        <Stack.Navigator initialRouteName="Standings">
+        <Stack.Navigator initialRouteName="WildCard">
             
             <Stack.Screen name="FirstPage" component={FirstPage} 
             options={{
