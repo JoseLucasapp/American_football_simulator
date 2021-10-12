@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const StandingsStyle = StyleSheet.create({
     list:{
-        height: 90+'%'
+        height: 95+'%'
     },
     afc:{
         color: 'red',

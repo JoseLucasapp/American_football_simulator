@@ -5,12 +5,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 import FirstPage from './pages/FirstPage';
 import Standings from './pages/Standings';
 import WildCard from './pages/WildCard';
+import DivisionalRound from './pages/DivisionalRound';
 
 const Stack = createStackNavigator();
 
 export default function Routes(){
     return (
-        <Stack.Navigator initialRouteName="WildCard">
+        <Stack.Navigator initialRouteName="FirstPage">
             
             <Stack.Screen name="FirstPage" component={FirstPage} 
             options={{
@@ -23,6 +24,11 @@ export default function Routes(){
             }}/>
 
             <Stack.Screen name="WildCard" component={WildCard} 
+            options={{
+              headerShown: false
+            }}/>
+
+            <Stack.Screen name="Divisional" component={DivisionalRound} 
             options={{
               headerShown: false
             }}/>

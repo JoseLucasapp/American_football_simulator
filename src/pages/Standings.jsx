@@ -1,4 +1,4 @@
-import React, {useContext, useRef} from 'react';
+import React, {useContext, useEffect, useRef} from 'react';
 import { View, Text, SectionList } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 

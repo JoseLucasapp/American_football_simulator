@@ -5,6 +5,45 @@ export const WildCardStyles = StyleSheet.create({
         marginTop: 5+'%',
         width: 90+'%',
         marginLeft: 5+"%"
+    },
+    list:{
+        height: 85+'%',
+        marginTop: 2+'%',
+        backgroundColor: 'grey'
+    },
+    afc:{
+        color: 'red',
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginTop: 15,
+        marginBottom: 3,
+        marginLeft: 5+'%'
+    },
+    nfc:{
+        marginTop: 15,
+        marginBottom: 3,
+        color: 'blue',
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginLeft: 5+'%'
+    },
+    topWordText:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    divisionalBtn:{
+        marginTop: 5+'%',
+        marginBottom: 1,
+        marginLeft: 20+'%',
+        width: 60+'%',
+        backgroundColor: 'red',
+        borderRadius: 20
+    },
+    divisionalBtnText:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
     }
 });
 
