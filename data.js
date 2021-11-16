@@ -1,4 +1,4 @@
-export const details = {
+const details = {
     nfc:{
         west:{
             one: {
@@ -35,14 +35,14 @@ export const details = {
             },
             two: {
                 name: "Chicago Bears",
-                color2: '#0B162A',
-                color1: '#C83803',
+                color1: '#0B162A',
+                color2: '#C83803',
                 conference: 'nfc'
             },
             three: {
                 name: "Minnesota Vikings",
-                color2: '#4F2683',
-                color1: '#FFC62F',
+                color1: '#4F2683',
+                color2: '#FFC62F',
                 conference: 'nfc'
             },
             four: {
@@ -61,8 +61,8 @@ export const details = {
             },
             two: {
                 name: "New Orleans Saints",
-                color2: '#D3BC8D',
-                color1: '#101820',
+                color1: '#D3BC8D',
+                color2: '#101820',
                 conference: 'nfc'
             },
             three: {
