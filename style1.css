@@ -11,8 +11,10 @@
     justify-content: space-between;
 }
 
-.root h2{
+.root h1{
     text-align: center;
+    border-radius: 10px;
+    border-color: transparent;
 }
 
 .root .regular .afc {
@@ -74,8 +76,9 @@
     cursor: pointer;
     border-radius: 5px;
     border-color: transparent;
-    background-color: blanchedalmond;
+    background-color: white;
     transform: scale(0.8);
+    font-weight: bold;
 }
 
 .root .playoffs .wildcard .buttons button:hover{
@@ -85,14 +88,12 @@
 }
 
 .root .playoffs .wildcard .wildcardafc{
-    background-color: #ff4040;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
 .root .playoffs .wildcard .wildcardnfc{
-    background-color: #7d75ff;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
@@ -111,7 +112,7 @@
     cursor: pointer;
     border-radius: 5px;
     border-color: transparent;
-    background-color: blanchedalmond;
+    background-color: white;
     transform: scale(0.8);
 }
 
