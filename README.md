@@ -4,7 +4,7 @@
 
 ### Regular season
 
-<p>You only need to pick 7 teams from each conference, after choose 7 from each one you can play the wild card</p>
+<p>You only need to pick 7 teams from each conference clicking on the team name, after choose 7 from each one you can play the wild card</p>
 
 ### Playoffs
 
@@ -13,3 +13,7 @@
 ## Warnings
 
 <p>The site isn't on the last version, this is only the 1st version</p>
+
+## URL
+
+<a href="https://joselucasapp.github.io/American_football_simulator/">Here</a>
